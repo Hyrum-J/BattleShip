@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -1680,7 +1678,7 @@ void aiTurn()
 				if (rightGuessed == true && leftGuessed == true && bottomGuessed == true)
 				{
 
-					aiShot = lastGuess - 9;
+					aiShot = initailHit - 9;
 
 					alreadyGuessed("AI", aiShot);
 
@@ -8590,7 +8588,7 @@ void hangMan()
 	string wordThree;
 
 	//The list of words. Can be modified to have more than ten. Can also be any word that is less then 12 letters just by changing the word here
-	string words[10] = { "ONOMATOPOEIA" , "VALORANT" , "ZOMBIES" , "LEGENDS" , "TECHNOBLADE" , "CODEBREAKER" , "HACKER" , "CLEARANCE" , "SECURITY" , "ANARCHY" };
+	string words[10] = { "ONOMATOPOEIA" , "PHOENIX" , "REDWOODS" , "PAYSON" , "PHILADELPHIA" , "HARLEM" , "BATTISTA" , "CLEARWATER" , "JACKSON" , "ANARCHY" };
 
 	//Keeps track of how much of each word is guessed
 	char wordProgressOne[12] = { ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' , ' ' };
@@ -8736,7 +8734,7 @@ void hangMan()
 				for (int n = 0; n < wordOneLength; n++)
 				{
 
-					cout << wordProgressOne[n];
+					cout << wordProgressOne[n] << " ";
 
 
 				}
@@ -8748,7 +8746,7 @@ void hangMan()
 				for (int o = 0; o < wordTwoLength; o++)
 				{
 
-					cout << wordProgressTwo[o];
+					cout << wordProgressTwo[o] << " ";
 
 				}
 
@@ -8759,7 +8757,7 @@ void hangMan()
 				for (int p = 0; p < wordThreeLength; p++)
 				{
 
-					cout << wordProgressThree[p];
+					cout << wordProgressThree[p] << " ";
 
 				}
 
@@ -9025,6 +9023,12 @@ void hangMan()
 				numOfIncorrectGuesses = 0;
 				wordGuessed = false;
 				lettersGuessed.clear();
+				hangManGrid[2][2] = ' ';
+				hangManGrid[3][2] = ' ';
+				hangManGrid[3][1] = ' ';
+				hangManGrid[3][3] = ' ';
+				hangManGrid[4][1] = ' ';
+				hangManGrid[4][3] = ' ';
 
 			}
 			else if (response == 'N')
